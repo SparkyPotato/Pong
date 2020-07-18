@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\Pong.cpp" />
+    <ClCompile Include="Engine\Classes\Application.cpp" />
+    <ClCompile Include="Engine\Classes\Entity.cpp" />
+    <ClCompile Include="Engine\Classes\Exception.cpp" />
+    <ClCompile Include="Engine\Classes\Graphics.cpp" />
+    <ClCompile Include="Engine\Classes\Input.cpp" />
+    <ClCompile Include="Engine\Classes\Keyboard.cpp" />
+    <ClCompile Include="Engine\Classes\Mouse.cpp" />
+    <ClCompile Include="Engine\Classes\Object.cpp" />
+    <ClCompile Include="Engine\Classes\Vector.cpp" />
+    <ClCompile Include="Engine\Classes\Window.cpp" />
+    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="Engine\EntryPoint.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application\Connection.h" />
+    <ClInclude Include="Application\Pong.h" />
+    <ClInclude Include="Engine\Classes\Application.h" />
+    <ClInclude Include="Engine\Classes\Entity.h" />
+    <ClInclude Include="Engine\Classes\Exception.h" />
+    <ClInclude Include="Engine\Classes\Graphics.h" />
+    <ClInclude Include="Engine\Classes\Input.h" />
+    <ClInclude Include="Engine\Classes\Keyboard.h" />
+    <ClInclude Include="Engine\Classes\Mouse.h" />
+    <ClInclude Include="Engine\Classes\Object.h" />
+    <ClInclude Include="Engine\Classes\Vector.h" />
+    <ClInclude Include="Engine\Classes\Window.h" />
+    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\Headers\Minimal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Engine\Shaders\PixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Engine\Shaders\VertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{4e8fdfe1-5779-455b-adbd-73bd64e7adf5}</ProjectGuid>
+    <RootNamespace>Pong</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Pong\Engine\Classes;$(SolutionDir)Pong\Engine\Headers;$(SolutionDir)Pong\Engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
